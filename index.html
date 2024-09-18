@@ -13,6 +13,7 @@
 
         h1 {
             color: #4CAF50;
+            font-size: 28px;
         }
 
         p {
@@ -21,28 +22,98 @@
 
         ul {
             list-style-type: none;
+            padding: 0;
         }
+
+        /* Flexbox layout for the overall page */
+        .container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* Left side (photo, title, info) */
+        .sidebar {
+            flex: 1;
+            max-width: 250px;
+            margin-right: 20px;
+        }
+
+            .sidebar img {
+                width: 100%; /* Adjust the width of your image */
+                height: auto;
+                border-radius: 50%; /* Make the image circular */
+            }
+
+            .sidebar p {
+                margin: 10px 0;
+            }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+            .contact-info a {
+                color: #4CAF50;
+                text-decoration: none;
+            }
+
+                .contact-info a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Main content (introduction and link to CV) */
+        .main-content {
+            flex: 2;
+        }
+
+            .main-content h2 {
+                margin-top: 0;
+            }
+
+        .cv-link {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .cv-link:hover {
+                background-color: #45a049;
+            }
     </style>
 </head>
 <body>
-    <h1>Haoyang Li</h1>
-    <p>Ph.D. student in Economics</p>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <img src="your-photo.jpg" alt="Haoyang Li Photo">
+            <h1>Haoyang Li</h1>
+            <p>Ph.D. student in Economics</p>
+            <p>Heriot-Watt University</p>
 
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Spatial econometrics</li>
-        <li>Machine Learning</li>
-        <li>Panel Data</li>
-        <li>Time Series </li>
-    </ul>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:hl2030@hw.ac.uk">hl2030@hw.ac.uk</a></p>
+                <p>GitHub: <a href="https://github.com/Howyoung-Li" target="_blank">howyoung-li.github.io</a></p>
+            </div>
+        </div>
 
-    <h2>Publications</h2>
-    <ul>
-        <li> Ersoy, E., Li, H., Schaffer, M.E. and Szendrei, T., 2023. Stacking Regression for Time-Series, with an Application to Forecasting Quarterly US GDP Growth. \textit{Optimal Transport Statistics for Economics and Related Topics} (pp. 131-149). Cham: Springer Nature Switzerland. </li>
-        <li> Ahrens, A., Ersoy, E., Iakovlev, V., Li, H. and Schaffer, M.E., 2022. An introduction to stacking regression for economists. \textit{International Conference of the Thailand Econometrics Society} (pp. 7-29). Cham: Springer International Publishing. </li>
-    </ul>
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>About Me</h2>
+            <p>I am a 4th year Ph.D. student at Heriot-Watt University. My research focuses on spatial econometrics, machine learning, panel data, and time series analysis. In particular, I am currently working on developing a new method to estimate an unknown spatial weights matrix which could be asymmetric by combining CCE (Pesaran, 2006) and OCMT (Chudik et al., 2018). The work includes theoretical proof, Monte Carlo simulations and an application to world enegyt data. I also work on combining different algorithms using an ensemble method named "Stacking" to achieve better prediction accuracy, and apply the method to real world forecasting such as GDP and energy prices.</p>
 
-    <h2>Contact</h2>
-    <p>Email: hl2030@hw.ac.uk</p>
+            <a class="cv-link" href="https://github.com/Howyoung-Li/Howyoung-Li.github.io/blob/main/CV_haoyang_2024.pdf" target="_blank">Download My CV</a>
+
+            <!-- Publications Section -->
+            <h2>Publications</h2>
+            <ul>
+                <li>Ersoy, E., Li, H., Schaffer, M.E. and Szendrei, T., 2023. Stacking Regression for Time-Series, with an Application to Forecasting Quarterly US GDP Growth. <i>Optimal Transport Statistics for Economics and Related Topics</i> (pp. 131-149). Cham: Springer Nature Switzerland.</li>
+                <li>Ahrens, A., Ersoy, E., Iakovlev, V., Li, H. and Schaffer, M.E., 2022. An introduction to stacking regression for economists. <i>International Conference of the Thailand Econometrics Society</i> (pp. 7-29). Cham: Springer International Publishing.</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
